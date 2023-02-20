@@ -11,7 +11,8 @@ function getComputerChoice() {
       return "scissors";
     }
   }
-
+let computerChoice = getComputerChoice()
+// console.log(computerChoice)
 /*
   const computerChoice = getComputerChoice();
 console.log(computerChoice);
@@ -34,7 +35,41 @@ function getUserChoice() {
       return "Wrong input. Please select a number not greater than 3!";
     }
   }
+let userChoice = getUserChoice()
+// console.log(userChoice)
+
+// create a score for computer and user
+let userScore = 0;
+let computerScore = 0;
 
 // compare the result with the computer
+function compareResults() {
+    if (userChoice === computerChoice){
+        computerScore = (computerScore + 1);
+        userScore = (userScore + 1)
+    }
+    else if (userChoice === "rock" && computerChoice === "paper") {
+        computerScore = (computerScore + 1)
+    }
+    else if (userChoice === "rock" && computerChoice === "scissors") {
+        userScore = (userScore + 1)
+    }
+    else if (userChoice === "paper" && computerChoice === "scissors") {
+        computerScore = (computerScore + 1)
+    }
+    else if (userChoice === "paper" && computerChoice === "rock") {
+        userScore = (userScore + 1)
+    }
+    else if (userChoice === "scissors" && computerChoice === "rock") {
+        computerScore = (computerScore + 1)
+    }
+    else if (userChoice === "scissors" && computerChoice === "paper") {
+        userScore = (userScore + 1)
+    }
+}
+compareResults();
+// console.log(userScore)
+// console.log(computerScore)
+
 // add one point to who wins
 // finish the game when some one reaches to five point
